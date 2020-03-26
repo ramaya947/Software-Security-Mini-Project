@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Gator Bank - Dashboard</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+  </head>
+
+  <body onload="loadTransactions()">
+    <h1>Hello, {{user}}. Welcome to your dashboard</h1>
+    <h2>The Table of Transactions</h2>
+    {% if trans_term %}
+    <h3 id="resultTitle">Results for:"{{trans_term|safe}}"</h3>
+    {% endif %}
+    <div id="dvTable"></div>
+    <form method="POST">
+      <label for="transSearch">Search transactions:</label><br />
+      <input
+        type="text"
+        id="transSearch"
+        name="transSearch"
+        placeholder="Search by description"
+      /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <a href="/signout">Sign Out</>
+
+    <script type="text/javascript">
+      function loadTransactions() {
+        var str = "{{trans}}";
+        str = str.replace(/&#34;/g, '"');
+        console.log(str);
+        var transactions = JSON.parse(str);
+        console.log(
+          "Loading Table w/ transactions with " + typeof transactions
+        );
+        console.log(transactions);
+
+        var header = ["User", "Description", "Price"];
+
+        //Create a HTML Table element.
+        var table = document.createElement("TABLE");
+        table.border = "1";
+
+        var columnCount = header.length;
+
+        var row = table.insertRow(-1);
+        for (var i = 0; i < columnCount; i++) {
+          var headerCell = document.createElement("TH");
+          headerCell.innerHTML = header[i];
+          row.appendChild(headerCell);
+        }
+
+        var data = transactions.transactions;
+
+        //Add the data rows.
+        for (var i = 0; i < data.length; i++) {
+          row = table.insertRow(-1);
+          var info = [data[i].username, data[i].description, data[i].price];
+          for (var j = 0; j < columnCount; j++) {
+            var cell = row.insertCell(-1);
+            cell.innerHTML = info[j];
+          }
+        }
+
+        var dvTable = document.getElementById("dvTable");
+        dvTable.innerHTML = "";
+        dvTable.appendChild(table);
+      }
+    </script>
+  </body>
+</html>
+

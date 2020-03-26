@@ -1,0 +1,41 @@
+<html>
+  <head> </head>
+
+  <body>
+    <h1>Welcome to Gator Bank!</h1>
+
+    <form method="post">
+      <h3>View Your Account:</h3>
+      <label for="username"><b>Username:</b></label>
+      <input
+        type="text"
+        placeholder="Enter username..."
+        name="username"
+        required
+      />
+
+      <label for="password"><b>Password:</b></label>
+      <input
+        type="password"
+        placeholder="Enter password..."
+        name="password"
+        required
+      />
+      <br />
+
+      <p>Which version of the site would you like to see?</p>
+      <input type="radio" id="Safe" name="sitetype" value="Safe" checked/>
+      <label for="Safe">Safe</label>
+      <input type="radio" id="Unsafe" name="sitetype" value="Unsafe" />
+      <label for="Unsafe">Unsafe</label>
+      <br />
+
+      <button type="submit">Sign On</button>
+    </form>
+
+    <p>{{errormsg}}</p>
+
+    <a href="/register">Don't have an account? Register!</a>
+  </body>
+</html>
+

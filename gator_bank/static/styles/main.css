@@ -1,0 +1,12 @@
+.profile-pic { 
+	height: 80px;
+	width: 80px;
+}
+
+div.recent-contact {
+	vertical-align: top;
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+	margin-right: 25px;
+}

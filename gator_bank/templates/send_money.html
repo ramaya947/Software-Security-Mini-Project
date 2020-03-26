@@ -1,0 +1,44 @@
+<html>
+  <head>
+	<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/main.css')}}">
+  </head>
+
+  <body>
+    <h1>{{user}}</h1>
+    {% if recent_contacts|length > 0%} 
+    	<h2> Recent Recipients: </h2>
+	{% for contact in recent_contacts %}
+		<div class="recent-contact">
+			<img class="profile-pic" src="{{contact.profile_picture}}"/>
+			<span>{{contact.username}}</span>
+		</div>
+	{% endfor %}
+    {% endif %}
+    <h2>Send Money</h2>
+
+    <form method="post">
+      <label for="recipient"><b>Recipient:</b></label>
+      <input
+        type="text"
+        placeholder="Recipient..."
+        name="recipient"
+        required
+      />
+
+      <label for="amount"><b>Amount:</b></label>
+      <input
+        type="text"
+        placeholder="Enter Amount..."
+        name="amount"
+        required
+      />
+      <br />
+      <button type="submit">Send</button>
+    </form>
+
+    <p>{{errormsg}}</p>
+
+    <a href="/home">Go Back</a>
+  </body>
+</html>
+

@@ -1,0 +1,25 @@
+<html>
+  <head> </head>
+
+  <body>
+    <h1>{{user}}</h1>
+    <h2>Deposit Money</h2>
+
+    <form method="post">
+      <label for="amount"><b>Amount:</b></label>
+      <input
+        type="text"
+        placeholder="Enter Amount..."
+        name="amount"
+        required
+      />
+      <br />
+      <button type="submiit">Deposit</button>
+    </form>
+
+    <p>{{errormsg}}</p>
+
+    <a href="/home">Go Back</a>
+  </body>
+</html>
+
