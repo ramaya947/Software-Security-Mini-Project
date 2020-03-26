@@ -2,6 +2,9 @@
 **PDF Report**
 - In GIT Repo under "Final Report.PDF"
 
+**Source & Config Files**
+- In the "gator_bank" folder within this repo.
+
 **Screencast**
 - Youtube Link: https://youtu.be/SM7ZHKKEqvw
 - Backup download link: https://drive.google.com/open?id=1KvTjb-npLszEGDhX-FzA5u0nnZXalpvd
