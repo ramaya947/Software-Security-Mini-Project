@@ -8,3 +8,7 @@
 
 **Running Version of Site**:
 - http://35.237.173.234/
+
+**Linkes to Web Services**:
+- N/A. Not entirely sure what this means, all work was done on the Google Cloud Platform as instructed. No other
+  web services were used. 
